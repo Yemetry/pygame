@@ -40,8 +40,8 @@ class Hero(pygame.sprite.Sprite):
             else:
                 self.coordinate[0] = self.coordinate[0] + 1
                 return True
-        else:
-            raise ValueError('Unsupport direction %s in Hero.move...' % direction)
+        # else:
+        #     raise ValueError('Unsupport direction %s in Hero.move...' % direction)
     '''Привязка к экрану'''
     def draw(self, screen):
         self.rect.left, self.rect.top = self.coordinate[0] * self.block_size + self.border_size[0], self.coordinate[1] * self.block_size + self.border_size[1]

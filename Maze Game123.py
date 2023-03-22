@@ -20,7 +20,7 @@ def main(cfg):
     best_scores = 'None'
     while True:
         num_levels += 1
-        clock = pygame.time.Clock()
+
         screen = pygame.display.set_mode(cfg.SCREENSIZE)
         maze_now = RandomMaze(cfg.MAZESIZE, cfg.BLOCKSIZE, cfg.BORDERSIZE)
         hero_now = Hero(cfg.HEROPICPATH, [0, 0], cfg.BLOCKSIZE, cfg.BORDERSIZE)

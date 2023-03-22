@@ -4,7 +4,7 @@ import random
 
 
 def showText(screen, font, text, color, position):
-    text_render = font.render(text, True, color)
+    text_render = font.render(text)
     rect = text_render.get_rect()
     rect.left, rect.top = position
     screen.blit(text_render, rect)
@@ -61,7 +61,9 @@ class RandomMaze():
         self.border_size = border_size
         self.maze_size = maze_size
         self.blocks_list = RandomMaze.createMaze(maze_size, block_size, border_size)
-        self.font = pygame.font.SysFont('Consolas', 15)
+        self.font = pygame.font.SysFont('None', 15)
+
+
     '''Картина на экране'''
     def draw(self, screen):
         for row in range(self.maze_size[0]):
@@ -123,6 +125,7 @@ class RandomMaze():
             return block_next
         blocks_list = [[Block([col, row], block_size, border_size) for col in range(maze_size[1])] for row in range(maze_size[0])]
         block_now = blocks_list[0][0]
+
         records = []
         while True:
             if block_now:
